@@ -33,14 +33,14 @@ namespace LinqQueryExamples
         {
             var items = Item.GetItems();
 
-            var res= items.GroupBy(i => i.Name).Select(g => new
+            var res = items.GroupBy(i => i.Name).Select(g => new
             {
                 Name = g.Key,
                 AveragePriceItem = g.Average(i => i.Price)
             }
                 );
 
-            foreach(var item in res)
+            foreach (var item in res)
             {
                 Console.WriteLine($"Item : {item.Name} , Avg : {item.AveragePriceItem}");
             }
